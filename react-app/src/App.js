@@ -5,7 +5,7 @@ import Mistakes from './components/Mistakes';
 function App() {
   return (
     <div>
-      <header className="App-header center">
+      <header>
         <h1>
           Comparing mistakes and best practices for HTML-first React
         </h1>

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import BestPractices from './components/BestPractices';
+import Mistakes from './components/Mistakes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className="App-header center">
+        <h1>
+          Comparing mistakes and best practices for HTML-first React
+        </h1>
       </header>
+      <section>
+        <h2>Mistakes</h2>
+        <Mistakes />
+      </section>
+      <section>
+        <h2>Best Practices</h2>
+        <BestPractices />
+      </section>
     </div>
   );
 }

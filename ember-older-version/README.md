@@ -1,7 +1,6 @@
 # ember-older-version
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a demo of Ember 2 (from around 2017) that is used to show how Ember has since evolved and iterated.
 
 ## Prerequisites
 

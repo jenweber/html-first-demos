@@ -1,0 +1,9 @@
+{
+  "name": "html-first-demos",
+  "version": "0.0.1",
+  "description": "Demos for EmberConf 2021",
+  "main": "index.js",
+  "repository": "https://github.com/jenweber/html-first-demos",
+  "author": "Jen Weber <j@jenweber.me>",
+  "license": "MIT"
+}

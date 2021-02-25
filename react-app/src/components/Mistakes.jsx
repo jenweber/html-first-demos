@@ -30,13 +30,20 @@ function ClickHereCodeV1() {
 function ClickHereAnswerV1() {
   return (
     <Reveal>
-      This button is not accessible, because it is not a real button. Clicks
-      should be attached to elements like buttons, so that you get automatic
-      keyboard navigation. As it is here, you cannot use a keyboard to interact
-      with it, and screen reader software cannot tell that it is interactive. It
-      would take a lot of extra work to replicate the automatic features of
-      buttons. Try using tab to navigate a page and find things that have broken
-      interactions.
+			<p>
+				This button is not accessible, because it is not a real button. Clicks
+				should be attached to elements like buttons, so that you get automatic
+				keyboard navigation. As it is here, you cannot use a keyboard to interact
+				with it, and screen reader software cannot tell that it is interactive. It
+				would take a lot of extra work to replicate the automatic features of
+				buttons. Try using tab to navigate a page and find things that have broken
+				interactions.
+			</p>
+			<p>
+				In an HTML-first approach, you study the features of HTML and
+				how the browsers use them. Whenever possible, you use
+				those built-in features instead of creating your own.
+			</p>
     </Reveal>
   );
 }
@@ -76,14 +83,21 @@ function ClickHereAnswerV2() {
 
   return (
     <Reveal>
-      It is best to avoid adding "modes" to your components. They have a
-      tendency to make it so that only JavaScript developers can read the
-      template and understand what is going on, because there is so much logic
-      involved. Instead, try passing in the display text as a child:
-      <Code exampleCode={exampleCode} />
-      This way, someone who is reading the template sees something that looks a
-      lot like a regular button. Although it is not HTML, it fits into their
-      understanding of HTML.
+			<p>
+				It is best to avoid adding "modes" to your components. They have a
+				tendency to make it so that only JavaScript developers can read the
+				template and understand what is going on, because there is so much logic
+				involved. Instead, try passing in the display text as a child:
+				<Code exampleCode={exampleCode} />
+			</p>
+			<p>
+				Following an HTML-first approach means that whenever you are
+				writing some templates, your default should be to make them
+				look like HTML.
+				Here, someone who is reading the template sees something that looks a
+				lot like a regular button. Although it is not HTML, it fits into their
+				understanding of HTML.
+			</p>
     </Reveal>
   );
 }
@@ -153,16 +167,20 @@ return (
 				Another smaller issue is that the onClick logic is better off
 				assigned to a variable, rather than written right there in
 				the markup.
-				Why split this up?
 				If one developer is working something like adding error handling with
 				JavaScript,
-				and the other is working on visuals, they would have some pretty
-				challenging git conflicts to wade through when everything is entertwined.
+				and the other is working on visuals,
+				they would have some nasty git conflicts to work through.
 				The person working on layout would also have to do a bunch of
 				extra scrolling just to get a sense of the HTML hierarchy.
 			</p>
 			<p>Here's what an improved component would look like:</p>
 			<Code exampleCode={exampleCode} />
+			<p>
+				In an HTML-first approach, you separate the
+				JavaScript logic from the layout.
+				This lets people work on both things at once.
+			</p>
     </Reveal>
   );
 }
@@ -238,6 +256,113 @@ function PageExampleAnswer() {
   );
 }
 
+function Row ({className, children, showSomething}) {
+	if (!showSomething) {
+		return null;
+	}
+	
+	return (
+		<i className={className}>
+			{children}
+		</i>
+	)
+}
+
+function LoopingExample () {
+	const restaurants = ['Sugar & Spice', 'Chilli Garden', 'Winsor Cafe']
+
+  return (
+    restaurants.map((restaurant) => {
+      <Row
+        className="some-class"
+        showSomething={true}
+      >
+        {restaurant}
+      </Row>
+    })
+  );
+}
+
+function LoopingExampleAlt() {
+	return (
+		<>
+			<li className="some-class">Sugar & Spice</li>
+			<li className="some-class">Chilli Garden</li>
+			<li className="some-class">Winsor Cafe</li>
+		</>
+	)
+}
+
+function LoopingExampleAltCode() {
+	const exampleCode = `
+		<>
+			<li className="some-class">Sugar & Spice</li>
+			<li className="some-class">Chilli Garden</li>
+			<li className="some-class">Winsor Cafe</li>
+		</>
+	`
+	return <Code exampleCode={exampleCode} />
+}
+
+function LoopingExampleCode() {
+  const exampleCode = `
+function LoopingExample () {
+  const restaurants = ['Sugar & Spice', 'Chilli Garden', 'Winsor Cafe']
+	
+  return (
+    restaurants.map((restaurant) => {
+      <Row
+        className="some-class"
+        showSomething={true}
+      >
+  	   {restaurant}
+      </Row>
+    }
+  );
+}
+`;
+
+  return <Code exampleCode={exampleCode} />;
+}
+
+function LoopingExampleAnswer() {
+  return (
+    <Reveal>
+			<p>
+				This example of looping over an array requires a judgement call, and it really depends
+				on the use case whether it can be improved or if it should
+				be left as-is.
+			</p>
+			<p>
+				Have you ever heard the term DRY code? It stands for
+				"don't repeat yourself."
+				This is a general rule of thumb that encourages you
+				to think twice any time you are copying and pasting something.
+				The example above is DRY - nothing is repeated.
+			</p>
+			<p>
+				What happens if we aim for DAMP code instead?
+				DAMP stands for Descriptive And Meaningful Phrases.
+				It emphasizes readability, reducing the time needed
+				to understand the code.
+				DAMP code might have some repetition,
+				but you can tell at a glance what it is doing.
+			</p>
+			<p>
+				An HTML-first approach to coding means that
+				you often have more repetition.
+				But, as you can see in the example below, the
+				advantage is readability. It is super clear
+				that the restaurants are part of a list.
+				This is important because list items have to be
+				direct children of a ul or ol element,
+				for them to be valid HTML.
+			</p>
+			<LoopingExampleAltCode />
+    </Reveal>
+  );
+}
+
 export default function Mistakes() {
   return (
     <div>
@@ -268,6 +393,11 @@ export default function Mistakes() {
       <PageExample />
       <PageExampleCode />
       <PageExampleAnswer />
+
+			<h3>Looping</h3>
+      <LoopingExample />
+      <LoopingExampleCode />
+      <LoopingExampleAnswer />
     </div>
   );
 }

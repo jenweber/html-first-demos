@@ -58,3 +58,14 @@ h3 {
   display: inline-block;
   border-radius: 3px;
 }
+
+.page-example {
+  border: 1px solid #666;
+  padding: 1rem;
+}
+
+.page-example button {
+  padding: 1rem;
+  color: blue;
+  text-decoration: underline; 
+}

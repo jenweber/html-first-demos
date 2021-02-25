@@ -11,7 +11,7 @@ function App() {
         </h1>
       </header>
       <section>
-        <h2>Mistakes</h2>
+        <h2>Reviewing for mistakes</h2>
         <Mistakes />
       </section>
       <section>

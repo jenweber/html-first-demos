@@ -242,16 +242,20 @@ function PageExample() {
 function PageExampleAnswer() {
   return (
     <Reveal>
+		<p>
 			Each time you click on a button, a different page gets displayed.
 			However, the URL remains the same. If someone refreshes the page,
 			they lose their place.
 			This example misses out on one of the most powerful features of the
 			web - URLs!
+		</p>
+		<p>
 			This app should have a router that changes the URL,
 			and new pages need to have the page title assigned.
 			Furthermore, those buttons should become a list of links inside
 			a nav element, once they are wired up for changing the URL when
 			you click them.
+		</p>
     </Reveal>
   );
 }

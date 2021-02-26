@@ -9,3 +9,34 @@
 {{/let}}
 
 <Code @code={{this.code}} />
+
+<Reveal>
+    <p>
+    There are a couple issues here. The most serious one is that
+    it makes team collaboration and visual skimming difficult.
+    People on the team who are unfamiliar with this part of the app
+    or who don't use JavaScript day-to-day would have a 
+    tough time telling what classes this button could possibly have.
+    I could use the dev tools to see what ends up in the DOM,
+    but even then, I would have to research all possible uses of this 
+    component in the app in order to know what is in use.
+  </p>
+  <p>
+    Another smaller issue is that the onClick logic is better off
+    assigned to a variable, rather than written right there in
+    the markup.
+    If one developer is working something like adding error handling with
+    JavaScript,
+    and the other is working on visuals,
+    they would have some nasty git conflicts to work through.
+    The person working on layout would also have to do a bunch of
+    extra scrolling just to get a sense of the HTML hierarchy.
+  </p>
+  <p>Here's what an improved component would look like:</p>
+  <Code @code={{this.answerCode}} />
+  <p>
+    In an HTML-first approach, you separate the
+    JavaScript logic from the layout.
+    This lets people work on both things at once.
+  </p>
+</Reveal>

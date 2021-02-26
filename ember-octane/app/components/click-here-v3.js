@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 
 export default class ClickHereV3Component extends Component {
-    code = `{{#let
+  code = `{{#let
   (concat @data.title '-button my-button')
   @data.displayName
   as |classes text|
@@ -10,4 +10,6 @@ export default class ClickHereV3Component extends Component {
     {{text}}
   </button>
 {{/let}}`
+
+  answerCode=`TODO`
 }

@@ -3,3 +3,21 @@
 </button>
 
 <Code @code={{this.code}} />
+
+<Reveal>
+  <p>
+    It is best to avoid adding "modes" to your components. They have a
+    tendency to make it so that only JavaScript developers can read the
+    template and understand what is going on, because there is so much logic
+    involved. Instead, try passing in the display text as a child:
+  </p>
+  <Code @code={{this.answerCode}} />
+  <p>
+    Following an HTML-first approach means that whenever you are
+    writing some templates, your default should be to make them
+    look like HTML.
+    Here, someone who is reading the template sees something that looks a
+    lot like a regular button. Although it is not HTML, it fits into their
+    understanding of HTML.
+  </p>
+</Reveal>

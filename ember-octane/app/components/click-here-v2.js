@@ -6,4 +6,14 @@ export default class ClickHereV2Component extends Component {
     code = `<button onClick={{@someClick}} class="my-button">
   {{modeText}}
 </button>`
+
+  answerCode = `<!-- In the template where you use the component -->
+<MyButton @someClick={{this.someClick}}>
+  Save
+</MyButton>
+
+<!-- MyButton -->
+<button {{on "click" @someClick}} class="my-button">
+  {{yield}}
+</button>`
 }

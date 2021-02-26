@@ -1,1 +1,10 @@
-{{yield}}
+<p>
+	What could be improved?
+	<button {{on 'click' this.handleClick}} class="reveal" aria-expanded={{this.shouldReveal}}>
+		{{if this.shouldReveal "Hide answer" "Reveal answer"}}
+	</button>
+</p>
+
+{{#if this.shouldReveal}}
+	{{yield}}
+{{/if}}

@@ -5,3 +5,36 @@
 {{/each}}
 
 <Code @code={{this.code}} />
+
+<Reveal>
+    <p>
+        This example of looping over an array requires a judgement call, and it really depends
+        on the use case whether it can be improved or if it should
+        be left as-is.
+    </p>
+    <p>
+        Have you ever heard the term DRY code? It stands for
+        "don't repeat yourself."
+        This is a general rule of thumb that encourages you
+        to think twice any time you are copying and pasting something.
+        The example above is DRY - nothing is repeated.
+    </p>
+    <p>
+        What happens if we aim for DAMP code instead?
+        DAMP stands for Descriptive And Meaningful Phrases.
+        It emphasizes readability, reducing the time needed
+        to understand the code.
+        DAMP code might have some repetition,
+        but you can tell at a glance what it is doing.
+    </p>
+    <p>
+        An HTML-first approach to coding means that
+        you often have more repetition.
+        But, as you can see in the example below, the
+        advantage is readability. It is super clear
+        that the restaurants are part of a list.
+        This is important because list items have to be
+        direct children of a ul or ol element,
+        for them to be valid HTML.
+    </p>
+</Reveal>

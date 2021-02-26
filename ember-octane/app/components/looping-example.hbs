@@ -1,0 +1,7 @@
+{{#each this.restaurants as |restaurant|}}
+    <Row @classes="restaurant small" showSomething={{true}}>
+        {{restaurant}}
+    </Row>
+{{/each}}
+
+<Code @code={{this.code}} />

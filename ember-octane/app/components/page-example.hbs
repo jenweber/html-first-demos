@@ -1,0 +1,16 @@
+<div class="page-example">
+  <button {{on 'click' (fn this.pageClick 'Dashboard')}}>
+    Dashboard
+  </button>
+  <button {{on 'click' (fn this.pageClick 'Reports')}}>
+    Reports
+  </button>
+
+  {{#if (is-equal this.page 'Dashboard')}}
+    <div>Dashboard Page Component goes here</div>
+  {{else if (is-equal this.page 'Reports')}}
+    <div>Reports Page Component goes here</div>
+  {{/if}}
+</div>
+
+<Code @code={{this.code}} />

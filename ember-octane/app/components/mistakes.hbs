@@ -1,1 +1,22 @@
-{{yield}}
+<p>
+    Imagine you are doing a PR review of the following code samples.
+    Can you spot the things that could be improved? Look for problems with
+    HTML markup validity, accessibility, readability, complexity, etc.
+    How would you communicate the feedback to someone in a helpful, clear,
+    and compassionate way?
+</p>
+
+<h3>Button click</h3>
+<ClickHereV1 @someClick={{this.someClick}} />
+
+<h3>Button modes</h3>
+<ClickHereV2 @mode="cancel" @someClick={{this.someClick}} />
+
+<h3>Button logic</h3>
+<ClickHereV3 @data={{this.data}} @someClick={{this.someClick}} />
+
+<h3>Pages</h3>
+<PageExample />
+
+<h3>Looping</h3>
+<LoopingExample />

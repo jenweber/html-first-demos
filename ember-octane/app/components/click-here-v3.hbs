@@ -1,0 +1,11 @@
+{{#let
+    (concat @data.title '-button my-button')
+    @data.displayName
+    as |classes text|
+}}
+    <button class={{classes}}>
+      {{text}}
+    </button>
+{{/let}}
+
+<Code @code={{this.code}} />
